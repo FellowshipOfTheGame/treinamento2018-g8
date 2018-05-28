@@ -4,41 +4,49 @@ using UnityEngine;
 
 public class Movimento : MonoBehaviour {
 
-    public float speed = 1.0f;
+
+    public float speedFrente = 1.0f;
+
+    public float speedLado = 1.0f;
 
     private CharacterController cont;
 
+    public float gravidade = 5.0f;
+
     Transform cam_tr;
 
+    Vector3 movedirect_v = Vector3.zero;
 
+    Vector3 movedirect_h = Vector3.zero;
 
     Vector3 movedirect = Vector3.zero;
-
-
-
-    // Use this for initialization
 
     void Start() {
 
         cam_tr = Camera.main.transform;
 
-       cont = GetComponent<CharacterController>();
+        cont = GetComponent<CharacterController>();
 
     }
 
-
-
-    // Update is called once per frame
-
     void Update() {
 
-        movedirect = cam_tr.forward;
+        movedirect_v = Input.GetAxis("Vertical") * cam_tr.forward * speedFrente;
 
-        movedirect = movedirect * speed * Input.GetAxis("Vertical");
+        movedirect_h = Input.GetAxis("Horizontal") * cam_tr.right * speedLado;
+
+        movedirect = movedirect_h + movedirect_v;
+
+       // movedirect = movedirect.normalized;
+
+    
+
+        movedirect.y = -gravidade;
 
         cont.Move(movedirect * Time.deltaTime);
 
     }
+
 
 
 }

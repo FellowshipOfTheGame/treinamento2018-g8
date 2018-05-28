@@ -29,7 +29,10 @@ public class PickObjects : MonoBehaviour {
 
                 if (podePegar) {
 
-                    pegarObjeto();
+                   
+                        pegarObjeto();
+                    
+                        
 
                 }
 
@@ -62,7 +65,7 @@ public class PickObjects : MonoBehaviour {
 
         objetoAPegar.SetActive(true);
 
-        objetoAPegar.transform.position = MainCamera.transform.position + new Vector3(0,0,0.5f);
+        objetoAPegar.transform.position = MainCamera.transform.position + MainCamera.forward;
 
         objetoAPegar.GetComponent<Rigidbody>().AddForce(MainCamera.forward * forca, ForceMode.Impulse);
 
@@ -71,9 +74,18 @@ public class PickObjects : MonoBehaviour {
     
     void OnTriggerEnter(Collider objeto) {
 
-        podePegar = true;
 
-        objetoAPegar = objeto.gameObject;
+       
+
+        if(objeto.gameObject.tag != "Player") {
+
+            objetoAPegar = objeto.gameObject;
+
+            podePegar = true;
+
+        }
+
+        
 
 
     }
