@@ -757,7 +757,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1173778936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7892494, y: 0.373, z: 4.096591}
+  m_LocalPosition: {x: 5.7892494, y: 12.14, z: 4.096591}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1492230979}
@@ -1365,7 +1365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AreaPickUp: {fileID: 1782145465}
   alturaSalto: 10
-  gravidadeComBrinquedo: 2
+  gravidadeComBrinquedo: 5
 --- !u!1 &1782145465
 GameObject:
   m_ObjectHideFlags: 0
