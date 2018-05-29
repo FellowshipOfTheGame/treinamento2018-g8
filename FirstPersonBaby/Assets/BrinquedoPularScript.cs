@@ -19,11 +19,15 @@ public class BrinquedoPularScript : MonoBehaviour {
     float velocidadeVertical;
 
     bool segurandoBrinquedoPular = false;
-	
+
+    Movimento scritMovimento;
 
 	void Start () {
 
-        gravidadePadrao = GameObject.FindGameObjectWithTag("Player").GetComponent<Movimento>().gravidadePadrao;
+
+        scritMovimento = GameObject.FindGameObjectWithTag("Player").GetComponent<Movimento>();
+
+        gravidadePadrao = scritMovimento.gravidadePadrao;
 
         controlador = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
 
@@ -47,8 +51,13 @@ public class BrinquedoPularScript : MonoBehaviour {
         if (segurandoBrinquedoPular) {
 
             controlador.Move(new Vector3(0, controladorPulo(), 0));
+        }else {
+            scritMovimento.gravidadePadrao = gravidadePadrao;
+
         }
-       
+
+
+        print(velocidadeVertical);
 
 
     }
@@ -60,28 +69,22 @@ public class BrinquedoPularScript : MonoBehaviour {
 
         if (controlador.isGrounded) {
 
-            velocidadeVertical = -gravidadePadrao * Time.deltaTime;
+            velocidadeVertical = 0;
+         
+            scritMovimento.gravidadePadrao = gravidadePadrao;
 
             if (Input.GetButtonDown("Action")) {
 
-                if (segurandoBrinquedoPular) {
-
-                    velocidadeVertical = alturaSalto;
-                }
+                 velocidadeVertical = alturaSalto;            
             }
 
         }
         else {
 
-            if (segurandoBrinquedoPular) {
+            scritMovimento.gravidadePadrao = 0;
 
-                velocidadeVertical = velocidadeVertical - (gravidadeComBrinquedo * Time.deltaTime);
-            }
-            else {
-
-                velocidadeVertical = velocidadeVertical - (gravidadePadrao * Time.deltaTime);
-            }
-
+            velocidadeVertical = velocidadeVertical - (gravidadeComBrinquedo * Time.deltaTime);
+  
         }
 
         return velocidadeVertical * Time.deltaTime;

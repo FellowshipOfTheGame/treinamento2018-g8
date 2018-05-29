@@ -1364,8 +1364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AreaPickUp: {fileID: 1782145465}
-  alturaSalto: 15
-  gravidadeComBrinquedo: 5
+  alturaSalto: 10
+  gravidadeComBrinquedo: 6
 --- !u!1 &1782145465
 GameObject:
   m_ObjectHideFlags: 0
