@@ -33,15 +33,6 @@ public class BrinquedoPularScript : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 
-        controlador.Move(new Vector3(0, controladorPulo(), 0));
-
-
-    }
-
-    public float controladorPulo() {
-
-        // print(controlador.isGrounded);
-
         segurandoBrinquedoPular = false;
 
         if (pegador.segurandoObj) {
@@ -53,6 +44,18 @@ public class BrinquedoPularScript : MonoBehaviour {
             }
         }
 
+        if (segurandoBrinquedoPular) {
+
+            controlador.Move(new Vector3(0, controladorPulo(), 0));
+        }
+       
+
+
+    }
+
+    public float controladorPulo() {
+
+        // print(controlador.isGrounded);
 
 
         if (controlador.isGrounded) {

@@ -777,7 +777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedFrente: 4
   speedLado: 1.5
-  gravidadePadrao: 3
+  gravidadePadrao: 9
 --- !u!1 &1324637570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,7 +1364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AreaPickUp: {fileID: 1782145465}
-  alturaSalto: 10
+  alturaSalto: 15
   gravidadeComBrinquedo: 5
 --- !u!1 &1782145465
 GameObject:
