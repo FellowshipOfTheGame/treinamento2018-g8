@@ -11,7 +11,7 @@ public class Movimento : MonoBehaviour {
 
     private CharacterController cont;
 
-    public float gravidadePadrao = 5.0f;
+    public float gravidade = 5.0f;
 
     Transform cam_tr;
 
@@ -43,11 +43,9 @@ public class Movimento : MonoBehaviour {
 
     
 
-        movedirect.y = -gravidadePadrao;
+        movedirect.y = -gravidade;
 
         cont.Move(movedirect * Time.deltaTime);
-
-        print(cont.isGrounded);
 
     }
 
