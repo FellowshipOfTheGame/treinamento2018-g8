@@ -16,10 +16,6 @@ public class Movimento : MonoBehaviour {
     Transform cam_tr;
 
     Vector3 movedirect_v = Vector3.zero;
-
-    Vector3 movedirect_h = Vector3.zero;
-
-    Vector3 movedirect_v = Vector3.zero;
     Vector3 movedirect_h = Vector3.zero;
     Vector3 movedirect = Vector3.zero;
 
