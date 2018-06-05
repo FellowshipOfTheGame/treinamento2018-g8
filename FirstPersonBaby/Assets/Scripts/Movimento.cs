@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Movimento : MonoBehaviour {
@@ -35,18 +36,15 @@ public class Movimento : MonoBehaviour {
 
         movedirect = movedirect_h + movedirect_v;
 
-       // movedirect = movedirect.normalized;
-
-    
-
         movedirect.y = -gravidadePadrao;
 
         cont.Move(movedirect * Time.deltaTime);
 
         print(cont.isGrounded);
 
+        if (Input.GetButtonDown("Reset"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
-
-
-
 }
