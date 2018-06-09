@@ -16,9 +16,17 @@ public class PickObjects : MonoBehaviour {
     Transform MainCamera;
     public float forca = 1.0f;
 
+    // Estrutura de dados para armazenar os objetos, será escolhido o objeto mais proximo do player
+    
+
+    ArrayList objetosAlcance;
+
+
     void Start() {
 
         MainCamera = Camera.main.transform;
+
+        objetosAlcance = new ArrayList();
 
     }
 
@@ -29,12 +37,12 @@ public class PickObjects : MonoBehaviour {
 
             if (!segurandoObj) {
 
+                DefinirSePodePegar();
+
                 if (podePegar) {
 
-                   
-                        pegarObjeto();
-                    
-                        
+                    DefinirObjetoApegar();
+                    pegarObjeto();
 
                 }
 
@@ -52,11 +60,8 @@ public class PickObjects : MonoBehaviour {
 
         segurandoObj = true;
 
-       // objetoAPegar.SetActive(false);
-
         objetoAPegar.GetComponent<Collider>().enabled = false;
         objetoAPegar.GetComponent<Renderer>().enabled = false;
-
         objetoAPegar.GetComponent<Rigidbody>().isKinematic = true;
 
     }
@@ -66,18 +71,13 @@ public class PickObjects : MonoBehaviour {
 
         segurandoObj = false;
 
-        //objetoAPegar.SetActive(true);
-
         objetoAPegar.GetComponent<Rigidbody>().isKinematic = false;
-
         objetoAPegar.GetComponent<Collider>().enabled = true;
         objetoAPegar.GetComponent<Renderer>().enabled = true;
 
-
-        objetoAPegar.transform.position = MainCamera.transform.position + MainCamera.forward;
+        objetoAPegar.transform.position = MainCamera.transform.position + 0.7f*MainCamera.forward;
 
         objetoAPegar.GetComponent<Rigidbody>().AddForce(MainCamera.forward * forca, ForceMode.Impulse);
-
 
     }
     
@@ -86,28 +86,66 @@ public class PickObjects : MonoBehaviour {
 
         if(objeto.gameObject.tag != "Player") {
 
-            if (!segurandoObj) {
-
-                objetoAPegar = objeto.gameObject;
-                podePegar = true;
-
-            }
-       
+            if (!objetosAlcance.Contains(objeto.gameObject)) {
+                objetosAlcance.Add(objeto.gameObject);
+            }      
         }
-
 
     }
 
     void OnTriggerExit(Collider objeto) {
 
+        if (objetosAlcance.Contains(objeto.gameObject)) {
+
+            objetosAlcance.Remove(objeto.gameObject);
+        }
+
+        if(objetosAlcance.Count == 0) {
+            podePegar = false;
+        }
+        
+    }
+
+    void DefinirObjetoApegar() {
+
+        GameObject maisPerto = null;
+        float menorDistancia = 1000.0f;// Gambiarra, arrumar depois
+
+        foreach(GameObject x in objetosAlcance) {
+            if(x != null) {
+
+                float distancia = Vector3.Distance(this.transform.position, x.transform.position);
+
+                if ( distancia < menorDistancia) {
+                    menorDistancia = distancia;
+                    maisPerto = x;
+                }
+
+            }    
+        }
+
+        if(maisPerto != null) {
+            objetosAlcance.Remove(maisPerto);
+            objetoAPegar = maisPerto;
+        }
+    
+    }
+
+    void DefinirSePodePegar() {
+
         podePegar = false;
 
-            
+        if(objetosAlcance.Count != 0) {
+            if (!segurandoObj) {
+                podePegar = true;
+            }
+        }
+
     }
 
 
 
-
-
-
 }
+
+
+

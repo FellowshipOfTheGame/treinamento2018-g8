@@ -44,7 +44,7 @@ public class Movimento : MonoBehaviour {
 
         if (Input.GetButtonDown("Reset"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

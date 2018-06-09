@@ -56,33 +56,35 @@ public class BrinquedoPularScript : MonoBehaviour {
 
         }
 
-
-        print(velocidadeVertical);
+        
 
 
     }
 
     public float controladorPulo() {
 
-        // print(controlador.isGrounded);
+         print(controlador.isGrounded);
 
+   
 
         if (controlador.isGrounded) {
 
-            velocidadeVertical = 0;
-         
-            scritMovimento.gravidadePadrao = gravidadePadrao;
+            if (velocidadeVertical < 0) {
+                velocidadeVertical = 0;
+                scritMovimento.gravidadePadrao = gravidadePadrao;
+            }
+            
 
             if (Input.GetButtonDown("Action")) {
 
-                 velocidadeVertical = alturaSalto;            
+                 velocidadeVertical = alturaSalto;
+                scritMovimento.gravidadePadrao = 0;
             }
 
         }
         else {
 
             scritMovimento.gravidadePadrao = 0;
-
             velocidadeVertical = velocidadeVertical - (gravidadeComBrinquedo * Time.deltaTime);
   
         }
