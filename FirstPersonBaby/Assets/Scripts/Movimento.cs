@@ -40,8 +40,6 @@ public class Movimento : MonoBehaviour {
 
         cont.Move(movedirect * Time.deltaTime);
 
-        print(cont.isGrounded);
-
         if (Input.GetButtonDown("Reset"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

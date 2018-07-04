@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AreaPickUp
   - destroy
+  - Activator
   layers:
   - Default
   - TransparentFX
