@@ -4,60 +4,47 @@ using UnityEngine;
 
 public class BrinquedoPularScript : MonoBehaviour {
 
-    public GameObject AreaPickUp;
-
+    // Referencias a outras estruturas
     PickObjects pegador;
-
     CharacterController controlador;
-
-    public float alturaSalto = 10.0f;
-
-    float gravidadePadrao;
-
-    public float gravidadeComBrinquedo = 2.0f;
-
-    float velocidadeVertical;
-
-    bool segurandoBrinquedoPular = false;
-
     Movimento scritMovimento;
 
+    //Configuração do pulo
+    public float alturaSalto = 10.0f;
+    float gravidadePadrao;
+    public float gravidadeComBrinquedo = 2.0f;
+    float velocidadeVertical;
+
+    //Variavel verifica se o brinquedo esta ativo
+    bool segurandoBrinquedoPular = false;
+
+
+
 	void Start () {
-
-
-        scritMovimento = GameObject.FindGameObjectWithTag("Player").GetComponent<Movimento>();
-
+        atualizarDados();
         gravidadePadrao = scritMovimento.gravidadePadrao;
-
-        controlador = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
-
-        pegador = AreaPickUp.GetComponent<PickObjects>();
-	}
+    }
 	
 	// Update is called once per frame
 	void LateUpdate () {
 
         segurandoBrinquedoPular = false;
+        atualizarDados();
+
 
         if (pegador.segurandoObj) {
-
             if (pegador.objetoAPegar == this.gameObject) {
-
                 segurandoBrinquedoPular = true;
-
             }
         }
 
-        if (segurandoBrinquedoPular) {
 
+        if (segurandoBrinquedoPular) {
             controlador.Move(new Vector3(0, controladorPulo(), 0));
         }else {
             scritMovimento.gravidadePadrao = gravidadePadrao;
 
         }
-
-        
-
 
     }
 
@@ -65,7 +52,6 @@ public class BrinquedoPularScript : MonoBehaviour {
 
          print(controlador.isGrounded);
 
-   
 
         if (controlador.isGrounded) {
 
@@ -92,12 +78,19 @@ public class BrinquedoPularScript : MonoBehaviour {
         return velocidadeVertical * Time.deltaTime;
 
         //  controlador.Move(new Vector3(0, velocidadeVertical * Time.deltaTime, 0));
-
-
     }
 
+    void atualizarDados() {
 
+        scritMovimento = GameObject.FindGameObjectWithTag("Player").GetComponent<Movimento>();
+        controlador = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
+        // pegador = AreaPickUp.GetComponent<PickObjects>();
+        pegador = GameObject.FindWithTag("AreaPickUp").GetComponent<PickObjects>();
+        if (pegador == null) {
+            print("Player não encontrado");
+        }
 
+    }
 
 
 }
