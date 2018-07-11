@@ -10,6 +10,7 @@ public class BrinquedoGravidade : MonoBehaviour {
     GameObject o_camera;
     Camera c_camera;
     CharacterController controlador;
+    Rigidbody rb;
 
     float movimento_camera = 0.2f;
     float GravidadePadrao;
@@ -29,16 +30,13 @@ public class BrinquedoGravidade : MonoBehaviour {
         Pegador = Jogador.transform.Find("Main Camera").transform.Find("PickUpArea").GetComponent<PickObjects>();
         controlador = Jogador.GetComponent<CharacterController>();
         c_camera = Camera.main;
+        rb = GetComponent<Rigidbody>();
 
         GravidadePadrao = ScriptMovimento.gravidadePadrao;
     }
 	
 	// Update is called once per frame
 	void LateUpdate () {
-        if(Jogador == null)
-        {
-            print("alalalalalalalalal");
-        }
         if (Pegador.segurandoObj)
         {
             if (Pegador.objetoAPegar == this.gameObject)
@@ -62,19 +60,22 @@ public class BrinquedoGravidade : MonoBehaviour {
                 GravidadePadrao = -GravidadePadrao;
                 Jogador.transform.Rotate(0, 0, 180);
                 o_camera.transform.Translate(new Vector3(0, movimento_camera, 0), Space.World);
-                Ativado = !Ativado;
-            }
-            if (GravidadePadrao == -ScriptMovimento.gravidadePadrao)
-            {
-                controlador.Move((new Vector3(0, -GravidadePadrao, 0)) * 2 * Time.deltaTime);
+                Ativado = true;
+                /*if (rb.useGravity == true)
+                {
+                    rb.useGravity = false;
+                    rb.AddForce(Physics.gravity * rb.mass);
+                }
+                else
+                {
+                    rb.useGravity = true;
+                    rb.AddForce(Vector3.zero);
+                }*/
             }
         }
-        if(Ativado && Input.GetButtonDown("Fire1"))
+        if (GravidadePadrao == -ScriptMovimento.gravidadePadrao)
         {
-            GravidadePadrao = -GravidadePadrao;
-            Jogador.transform.Rotate(0, 0, 180);
-            o_camera.transform.Translate(new Vector3(0, movimento_camera, 0), Space.World);
-            Ativado = !Ativado;
+            controlador.Move((new Vector3(0, -GravidadePadrao, 0)) * 2 * Time.deltaTime);
         }
-	}
+    }
 }
