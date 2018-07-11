@@ -26,6 +26,13 @@ ModelImporter:
     2100008: 6_6Mat
     2100010: 7_7Mat
     2100012: 9_9Mat
+    2100014: Glass
+    2100016: Lock
+    2100018: Frame_in
+    2100020: Cage_in
+    2100022: Threshold
+    2100024: Frame_out
+    2100026: Cage_out
     2300000: 10_10
     2300002: 11_11
     2300004: 12_12

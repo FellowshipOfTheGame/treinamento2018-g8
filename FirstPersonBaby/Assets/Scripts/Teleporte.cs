@@ -9,6 +9,8 @@ public class Teleporte : MonoBehaviour {
     PickObjects pc;
     CharacterController controller;
     bool SegBrinqTeletransporte;
+    public float distancia = 2.0f;
+    public float range = 1000;
 
     void Start()
     {
@@ -16,11 +18,14 @@ public class Teleporte : MonoBehaviour {
         pc = AreaPickUp.GetComponent<PickObjects>();
     }
 
-    void LateUpdate()
+    void Update()
     {
         SegBrinqTeletransporte = false;
 
-        if(pc.segurandoObj)
+
+       
+
+        if (pc.segurandoObj)
         {
             if(pc.objetoAPegar == this.gameObject)
             {
@@ -31,6 +36,12 @@ public class Teleporte : MonoBehaviour {
 
         if (SegBrinqTeletransporte)
         {
+           /*Vector3 origem = controller.transform.position + Vector3.forward;
+
+            Vector3 direcao = 1.2f*Camera.main.transform.forward;
+             Ray ray = new Ray(origem, direcao);
+             Debug.DrawRay(ray.origin, ray.direction, Color.black);*/
+
             if (Input.GetButtonDown("Action"))
             {
                 if (GetLookedAtObject() != null)
@@ -44,10 +55,11 @@ public class Teleporte : MonoBehaviour {
     }
     private GameObject GetLookedAtObject()
     {
-        Vector3 origem = transform.position;
-        Vector3 direcao = Camera.main.transform.forward;
-        float range = 1000;
-        if(Physics.Raycast (origem, direcao, out lastRaycastHit, range))
+        Vector3 origem = controller.transform.position + Vector3.forward;
+      
+        Vector3 direcao = 1.2f*Camera.main.transform.forward;
+
+        if (Physics.Raycast (origem, direcao, out lastRaycastHit, range))
         {
             return lastRaycastHit.collider.gameObject;
         }
@@ -59,18 +71,10 @@ public class Teleporte : MonoBehaviour {
 
     private void TeleportToLookAt()
     {
-        transform.position = lastRaycastHit.point + lastRaycastHit.normal * 2;
+        
+        controller.transform.position = lastRaycastHit.point + lastRaycastHit.normal * distancia;
 
     }
 
-    void Update()
-    {
-        if(Input.GetButtonDown("Action"))
-        {
-            if(GetLookedAtObject() != null)
-            {
-                TeleportToLookAt();
-            }
-        }
-    }
+  
 }
