@@ -15,7 +15,7 @@ public class BrinquedoGravidade : MonoBehaviour {
     float movimento_camera = 0.2f;
     float GravidadePadrao;
     bool SegurandoBrinquedo;
-    bool Ativado = false;
+    Vector3 giro;
 
     void Gira_player()
     {
@@ -57,20 +57,12 @@ public class BrinquedoGravidade : MonoBehaviour {
         {
             if (Input.GetButtonDown("Action"))
             {
+                giro = new Vector3(0, 0, 1);
+                print(o_camera.transform.eulerAngles.y);
+                giro = (Quaternion.AngleAxis(o_camera.transform.eulerAngles.y, Vector3.up) * giro);
+                print(giro);
                 GravidadePadrao = -GravidadePadrao;
-                Jogador.transform.Rotate(0, 0, 180);
-                o_camera.transform.Translate(new Vector3(0, movimento_camera, 0), Space.World);
-                Ativado = true;
-                /*if (rb.useGravity == true)
-                {
-                    rb.useGravity = false;
-                    rb.AddForce(Physics.gravity * rb.mass);
-                }
-                else
-                {
-                    rb.useGravity = true;
-                    rb.AddForce(Vector3.zero);
-                }*/
+                Jogador.transform.RotateAround(Jogador.transform.position, giro, 180);
             }
         }
         if (GravidadePadrao == -ScriptMovimento.gravidadePadrao)
