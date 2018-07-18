@@ -57,12 +57,21 @@ public class BrinquedoGravidade : MonoBehaviour {
         {
             if (Input.GetButtonDown("Action"))
             {
-                giro = new Vector3(0, 0, 1);
-                print(o_camera.transform.eulerAngles.y);
-                giro = (Quaternion.AngleAxis(o_camera.transform.eulerAngles.y, Vector3.up) * giro);
-                print(giro);
+                giro = (Quaternion.AngleAxis(o_camera.transform.eulerAngles.y, Vector3.up) * Vector3.forward);
                 GravidadePadrao = -GravidadePadrao;
                 Jogador.transform.RotateAround(Jogador.transform.position, giro, 180);
+            }
+            if (Input.GetButtonDown("Action2"))
+            {
+                float dist = 0.77f;
+                Vector3 dir = Quaternion.Euler(o_camera.transform.eulerAngles) * Vector3.forward;
+                Ray look = new Ray((o_camera.transform.position + dir.normalized * dist), dir);
+                RaycastHit info = new RaycastHit();
+                if (Physics.Raycast(look, out info))
+                {
+                    GameObject temp = info.collider.gameObject;
+                    print(temp.name);
+                }
             }
         }
         if (GravidadePadrao == -ScriptMovimento.gravidadePadrao)
