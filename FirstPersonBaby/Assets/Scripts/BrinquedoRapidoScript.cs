@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BrinquedoRapidoScript : MonoBehaviour {
+public class BrinquedoRapidoScript : MonoBehaviour
+{
 
-    public float fast_speed = 1.0f;
+    bool SegurandoCarro = false;
+
+    public GameObject Player;
+
+    public float fast_speed = 18.0f;
+
+    PickObjects pegador;
 
     private CharacterController cont;
 
-    public float gravidadePadrao = 5.0f;
+    public float gravidadePadrao = 0.0f;
 
     Transform cam_tr;
 
@@ -20,23 +27,48 @@ public class BrinquedoRapidoScript : MonoBehaviour {
 
         cam_tr = Camera.main.transform;
 
-        cont = GetComponent<CharacterController>();
+        cont = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
 
+        pegador = GameObject.FindWithTag("AreaPickUp").GetComponent<PickObjects>();
+        if (pegador == null)
+        {
+            print("Player não encontrado");
+
+
+        }
     }
 
     void Update()
     {
 
-        movedirect_v = Input.GetAxis("superv") * cam_tr.forward * fast_speed;
- 
+        SegurandoCarro = false;
 
-        movedirect = movedirect_v;
+        if (pegador.segurandoObj)
+        {
+            if (pegador.objetoAPegar == this.gameObject)
+            {
 
-        movedirect.y = -gravidadePadrao;
+                SegurandoCarro = true;
+            }
+        }
 
-        cont.Move(movedirect * Time.deltaTime);
+        if (SegurandoCarro)
+        {
+            {
 
-        print(cont.isGrounded);
+                movedirect_v = Input.GetAxis("Action") * cam_tr.forward * fast_speed;
 
+
+                movedirect = movedirect_v;
+
+                movedirect.y = -gravidadePadrao;
+
+                cont.Move(movedirect * Time.deltaTime);
+
+                print(cont.isGrounded);
+
+            }
+
+        }
     }
 }
