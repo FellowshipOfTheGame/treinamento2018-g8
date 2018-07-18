@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ab5e0beb1c36778479983f28b65d97dd
+guid: 6041ba3a93e57cd4bb8680e9a1dcf74e
 labels:
 - wood
 - lowpoly
@@ -11,9 +11,9 @@ labels:
 - pack
 - set
 - art
-timeCreated: 1462217374
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7c5aafe3fe2c6ef4a9150f7f44653760
+guid: 52ec20f66848cc34eaa403a49f3f883e
 labels:
 - dead
 - plant
@@ -11,9 +11,9 @@ labels:
 - wood
 - art
 - free
-timeCreated: 1457642339
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5578b82f17c954843901e8b68ca21dcc
+guid: 9e29dd92bdd765b469d125341f311438
 labels:
 - lowpoly
 - rock
@@ -9,9 +9,9 @@ labels:
 - pack
 - set
 - free
-timeCreated: 1457638041
-licenseType: Store
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
