@@ -17,7 +17,6 @@ public class PickObjects : MonoBehaviour {
     public float forca = 1.0f;
 
     // Estrutura de dados para armazenar os objetos, será escolhido o objeto mais proximo do player
-    
 
     ArrayList objetosAlcance;
 
