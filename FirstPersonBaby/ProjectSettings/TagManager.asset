@@ -6,7 +6,11 @@ TagManager:
   tags:
   - AreaPickUp
   - destroy
-  - Activator
+  - Nuvem
+  - destroyred
+  - brinquedo teletransporte
+  - parede
+  - chao
   layers:
   - Default
   - TransparentFX

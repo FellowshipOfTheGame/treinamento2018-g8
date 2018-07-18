@@ -5,6 +5,7 @@ using UnityEngine;
 public class PickObjects : MonoBehaviour {
 
     // Use this for initialization
+    
 
     [HideInInspector]
     public bool segurandoObj = false;
@@ -39,13 +40,14 @@ public class PickObjects : MonoBehaviour {
                 DefinirSePodePegar();
 
                 if (podePegar) {
-
+               
                     DefinirObjetoApegar();
                     pegarObjeto();
 
                 }
 
             }else {
+           
 
                 jogarObjeto();
 
@@ -58,7 +60,7 @@ public class PickObjects : MonoBehaviour {
     void pegarObjeto() {
 
         segurandoObj = true;
-
+        Debug.Log("segurando obj");
         objetoAPegar.GetComponent<Collider>().enabled = false;
         objetoAPegar.GetComponent<Renderer>().enabled = false;
         objetoAPegar.GetComponent<Rigidbody>().isKinematic = true;
@@ -74,13 +76,12 @@ public class PickObjects : MonoBehaviour {
         objetoAPegar.GetComponent<Collider>().enabled = true;
         objetoAPegar.GetComponent<Renderer>().enabled = true;
 
-        objetoAPegar.transform.position = MainCamera.transform.position + 0.7f*MainCamera.forward;
-
-        objetoAPegar.GetComponent<Rigidbody>().AddForce(MainCamera.forward * forca, ForceMode.Impulse);
-
+       objetoAPegar.transform.position = MainCamera.transform.position + 0.7f*MainCamera.forward;
+    
+         objetoAPegar.GetComponent<Rigidbody>().AddForce(MainCamera.forward * forca, ForceMode.Impulse);
+       
     }
-    
-    
+
     void OnTriggerEnter(Collider objeto) {
 
         if(objeto.gameObject.tag != "Player") {

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraScript : MonoBehaviour {
+public class CameraScript : MonoBehaviour
+{
 
 
 
@@ -14,13 +15,13 @@ public class CameraScript : MonoBehaviour {
 
     public float sensitivityY = 2F;
 
-    public float minimumX = -120F;
+    public float minimumX = -360F;
 
-    public float maximumX = 120F;
+    public float maximumX = 360F;
 
-    public float minimumY = -50F;
+    public float minimumY = -100F;
 
-    public float maximumY = 50F;
+    public float maximumY = 100F;
 
     float rotationX = 0F;
 
@@ -28,25 +29,35 @@ public class CameraScript : MonoBehaviour {
 
     Quaternion originalRotation;
 
-    
+    //CharacterController controller;
 
+  
 
+  
 
-    void Start() {
+   
+
+    void Start()
+    {
 
         originalRotation = transform.localRotation;
 
         Cursor.lockState = CursorLockMode.Locked;
 
+       // controller = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
+
+        
     }
 
 
 
 
 
-    void Update() {
+    void Update()
+    {
 
-        if (axes == RotationAxes.MouseXAndY) {
+        if (axes == RotationAxes.MouseXAndY)
+        {
 
             //pega o input da rotação do mouse
 
@@ -76,7 +87,7 @@ public class CameraScript : MonoBehaviour {
 
             transform.localRotation = originalRotation * xQuaternion * yQuaternion;
 
-
+           // controller.transform.localRotation = transform.localRotation;
 
 
 
@@ -90,19 +101,23 @@ public class CameraScript : MonoBehaviour {
 
     // função que vai ver o limite de rotação imposto, isso é feito de acordo com angulos 
 
-    public static float ClampAngle(float angle, float minimum, float maximum) {
+    public static float ClampAngle(float angle, float minimum, float maximum)
+    {
 
         angle = angle % 360;
 
-        if ((angle >= 360F) && (angle <= 360F)) {
+        if ((angle >= 360F) && (angle <= 360F))
+        {
 
-            if (angle < -360F) {
+            if (angle < -360F)
+            {
 
                 angle += 360F;
 
             }
 
-            if (angle > 360F) {
+            if (angle > 360F)
+            {
 
                 angle -= 360F;
 
