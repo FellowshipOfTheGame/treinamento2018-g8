@@ -20,12 +20,14 @@ public class Movimento : MonoBehaviour {
     Vector3 movedirect_h = Vector3.zero;
     Vector3 movedirect = Vector3.zero;
 
+
     void Start() {
 
         cam_tr = Camera.main.transform;
 
         cont = GetComponent<CharacterController>();
 
+        
     }
 
     void Update() {
@@ -39,8 +41,6 @@ public class Movimento : MonoBehaviour {
         movedirect.y = -gravidadePadrao;
 
         cont.Move(movedirect * Time.deltaTime);
-
-        print(cont.isGrounded);
 
         if (Input.GetButtonDown("Reset"))
         {
