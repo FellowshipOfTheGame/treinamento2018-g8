@@ -19,6 +19,12 @@ public class BrinquedoPularScript : MonoBehaviour {
     bool segurandoBrinquedoPular = false;
 
 
+    //Varievel para verificar se o player esta parado;
+    Vector3 PosInicial = Vector3.zero;
+    Vector3 PosFinal = Vector3.zero;
+    bool frame = true;
+
+
 
 	void Start () {
         atualizarDados();
@@ -50,10 +56,29 @@ public class BrinquedoPularScript : MonoBehaviour {
 
     public float controladorPulo() {
 
-         print(controlador.isGrounded);
+        //print(controlador.isGrounded);
+      
+        //Logica para arrumar o problema dele não pular quando esta parado
+        //Basicamente verifica se o player esta em movimento ou não, quando o player esta parado ele libera o pulo
+        //Se pegar a velocidade diretamente pelo o unity estava bugando, então fiz uma logica para regastar a velocidade
+        PosFinal = controlador.gameObject.transform.position;
+        if (frame) {
+            PosInicial = controlador.gameObject.transform.position;
+        }
 
+        Vector3 velocidade = Vector3.up;
 
-        if (controlador.isGrounded) {
+        if (!frame) {
+            velocidade = PosFinal - PosInicial;
+        }
+
+        frame = !frame;
+
+  //      print(difenca.magnitude);
+
+        if (controlador.isGrounded || velocidade.magnitude < 0.0001f) {
+
+//            print("entrou");
 
             if (velocidadeVertical < 0) {
                 velocidadeVertical = 0;
