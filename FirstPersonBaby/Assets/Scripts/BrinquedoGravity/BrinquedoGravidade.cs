@@ -8,11 +8,8 @@ public class BrinquedoGravidade : MonoBehaviour {
     PickObjects Pegador;
     GameObject Jogador;
     GameObject o_camera;
-    Camera c_camera;
     CharacterController controlador;
-    Rigidbody rb;
-
-    float movimento_camera = 0.2f;
+    
     public float graus_segundo;
     float GravidadePadrao;
     bool SegurandoBrinquedo;
@@ -32,15 +29,12 @@ public class BrinquedoGravidade : MonoBehaviour {
         ScriptMovimento = Jogador.GetComponent<Movimento>();
         Pegador = Jogador.transform.Find("Main Camera").transform.Find("PickUpArea").GetComponent<PickObjects>();
         controlador = Jogador.GetComponent<CharacterController>();
-        c_camera = Camera.main;
-        rb = GetComponent<Rigidbody>();
 
         GravidadePadrao = ScriptMovimento.gravidadePadrao;
     }
 	
 	// Update is called once per frame
 	void LateUpdate () {
-        print(o_camera.transform.eulerAngles.z);
         if (Pegador.segurandoObj)
         {
             if (Pegador.objetoAPegar == this.gameObject)
