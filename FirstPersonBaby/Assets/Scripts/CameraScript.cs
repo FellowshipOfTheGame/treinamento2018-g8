@@ -29,6 +29,11 @@ public class CameraScript : MonoBehaviour
 
     Quaternion originalRotation;
 
+    //CharacterController controller;
+
+  
+
+  
 
    
 
@@ -39,8 +44,9 @@ public class CameraScript : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
 
-      
+       // controller = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
 
+        
     }
 
 
@@ -80,8 +86,8 @@ public class CameraScript : MonoBehaviour
             //rotaciona a camera
 
             transform.localRotation = originalRotation * xQuaternion * yQuaternion;
-           
 
+           // controller.transform.localRotation = transform.localRotation;
 
 
 

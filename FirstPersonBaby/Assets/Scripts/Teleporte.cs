@@ -12,10 +12,13 @@ public class Teleporte : MonoBehaviour {
     public float distancia = 2.0f;
     public float range = 1000;
 
+
+
     void Start()
     {
         controller = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
         pc = AreaPickUp.GetComponent<PickObjects>();
+       
     }
 
     void Update()
@@ -36,11 +39,15 @@ public class Teleporte : MonoBehaviour {
 
         if (SegBrinqTeletransporte)
         {
-           /*Vector3 origem = controller.transform.position + Vector3.forward;
+            Vector3 origem  = controller.transform.position + controller.transform.forward;
 
-            Vector3 direcao = 1.2f*Camera.main.transform.forward;
-             Ray ray = new Ray(origem, direcao);
-             Debug.DrawRay(ray.origin, ray.direction, Color.black);*/
+            Vector3 direcao = Camera.main.transform.forward;
+            Ray ray = new Ray(origem, direcao);
+             Debug.DrawRay(ray.origin, ray.direction, Color.black);
+
+      
+
+          
 
             if (Input.GetButtonDown("Action"))
             {
@@ -55,9 +62,9 @@ public class Teleporte : MonoBehaviour {
     }
     private GameObject GetLookedAtObject()
     {
-        Vector3 origem = controller.transform.position + Vector3.forward;
+        Vector3 origem = controller.transform.position + controller.transform.forward;
       
-        Vector3 direcao = 1.2f*Camera.main.transform.forward;
+        Vector3 direcao = Camera.main.transform.forward;
 
         if (Physics.Raycast (origem, direcao, out lastRaycastHit, range))
         {
@@ -73,8 +80,12 @@ public class Teleporte : MonoBehaviour {
     {
         
         controller.transform.position = lastRaycastHit.point + lastRaycastHit.normal * distancia;
+        
 
+       
     }
 
   
+
+
 }
