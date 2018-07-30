@@ -67,7 +67,7 @@ public class Teleporte : MonoBehaviour {
 
         if (Physics.Raycast (ray, out lastRaycastHit, range))
         {
-            Debug.Log(lastRaycastHit.collider.tag);
+          // Debug.Log(lastRaycastHit.collider.tag);
             return lastRaycastHit.collider.gameObject;
         }
         else
