@@ -8,13 +8,13 @@ public class BrinquedoGravidade : MonoBehaviour {
     PickObjects Pegador;
     GameObject Jogador;
     GameObject o_camera;
-    Camera c_camera;
     CharacterController controlador;
-    Rigidbody rb;
-
-    float movimento_camera = 0.2f;
+    
+    public float graus_segundo;
     float GravidadePadrao;
     bool SegurandoBrinquedo;
+    bool girando = false;
+    float quantidade_girada = 0.0f;
     Vector3 giro;
 
     void Gira_player()
@@ -29,8 +29,6 @@ public class BrinquedoGravidade : MonoBehaviour {
         ScriptMovimento = Jogador.GetComponent<Movimento>();
         Pegador = Jogador.transform.Find("Main Camera").transform.Find("PickUpArea").GetComponent<PickObjects>();
         controlador = Jogador.GetComponent<CharacterController>();
-        c_camera = Camera.main;
-        rb = GetComponent<Rigidbody>();
 
         GravidadePadrao = ScriptMovimento.gravidadePadrao;
     }
@@ -52,31 +50,71 @@ public class BrinquedoGravidade : MonoBehaviour {
         {
             SegurandoBrinquedo = false;
         }
-
-        if (SegurandoBrinquedo)
+        if (girando)
         {
-            if (Input.GetButtonDown("Action"))
+            Jogador.transform.RotateAround(Jogador.transform.position, giro, graus_segundo*Time.deltaTime);
+            quantidade_girada += graus_segundo * Time.deltaTime;
+            if(quantidade_girada >= 180.0f)
             {
-                giro = (Quaternion.AngleAxis(o_camera.transform.eulerAngles.y, Vector3.up) * Vector3.forward);
-                GravidadePadrao = -GravidadePadrao;
-                Jogador.transform.RotateAround(Jogador.transform.position, giro, 180);
-            }
-            if (Input.GetButtonDown("Action2"))
-            {
-                float dist = 0.77f;
-                Vector3 dir = Quaternion.Euler(o_camera.transform.eulerAngles) * Vector3.forward;
-                Ray look = new Ray((o_camera.transform.position + dir.normalized * dist), dir);
-                RaycastHit info = new RaycastHit();
-                if (Physics.Raycast(look, out info))
+                girando = false;
+                quantidade_girada = 0.0f;
+                Jogador.GetComponent<Movimento>().enabled = true;   
+                if((o_camera.transform.eulerAngles.z) < (180 - o_camera.transform.eulerAngles.z))
                 {
-                    GameObject temp = info.collider.gameObject;
-                    print(temp.name);
+                    Jogador.transform.RotateAround(Jogador.transform.position, giro, -o_camera.transform.eulerAngles.z);
+                }
+                else
+                {
+                    Jogador.transform.RotateAround(Jogador.transform.position, giro,(180 - o_camera.transform.eulerAngles.z));
                 }
             }
         }
-        if (GravidadePadrao == -ScriptMovimento.gravidadePadrao)
+        else
         {
-            controlador.Move((new Vector3(0, -GravidadePadrao, 0)) * 2 * Time.deltaTime);
+            if (SegurandoBrinquedo)
+            {
+                if (Input.GetButtonDown("Action"))
+                {
+                    Jogador.GetComponent<Movimento>().enabled = false;
+                    girando = true;
+                    giro = (Quaternion.AngleAxis(o_camera.transform.eulerAngles.y, Vector3.up) * Vector3.forward);
+                    GravidadePadrao = -GravidadePadrao;
+                    if (gameObject.GetComponent<GravidadeInvertida>() == null)
+                    {
+                        gameObject.AddComponent<GravidadeInvertida>();
+                    }
+                    else
+                    {
+                        Destroy(gameObject.GetComponent<GravidadeInvertida>());
+                    }
+                }
+                if (Input.GetButtonDown("Action2"))
+                {
+                    float dist = 0.77f;
+                    Vector3 dir = Quaternion.Euler(o_camera.transform.eulerAngles) * Vector3.forward;
+                    Ray look = new Ray((o_camera.transform.position + dir.normalized * dist), dir);
+                    RaycastHit info = new RaycastHit();
+                    if (Physics.Raycast(look, out info))
+                    {
+                        GameObject temp = info.collider.gameObject;
+                        if (temp.GetComponent<Rigidbody>() != null)
+                        {
+                            if (temp.GetComponent<GravidadeInvertida>() == null)
+                            {
+                                temp.AddComponent<GravidadeInvertida>();
+                            }
+                            else
+                            {
+                                Destroy(temp.GetComponent<GravidadeInvertida>());
+                            }
+                        }
+                    }
+                }
+            }
+            if (GravidadePadrao == -ScriptMovimento.gravidadePadrao)
+            {
+                controlador.Move((new Vector3(0, -GravidadePadrao, 0)) * 2 * Time.deltaTime);
+            }
         }
     }
 }

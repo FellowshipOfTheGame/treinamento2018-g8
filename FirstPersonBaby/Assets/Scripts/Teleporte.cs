@@ -11,13 +11,14 @@ public class Teleporte : MonoBehaviour {
     bool SegBrinqTeletransporte;
     public float distancia = 2.0f;
     public float range = 1000;
-
-
-
+    public GameObject mira;
+   
     void Start()
     {
         controller = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
         pc = AreaPickUp.GetComponent<PickObjects>();
+        mira.SetActive(false);
+      
        
     }
 
@@ -25,8 +26,8 @@ public class Teleporte : MonoBehaviour {
     {
         SegBrinqTeletransporte = false;
 
-
-       
+        mira.SetActive(false);
+        
 
         if (pc.segurandoObj)
         {
@@ -39,35 +40,34 @@ public class Teleporte : MonoBehaviour {
 
         if (SegBrinqTeletransporte)
         {
-            Vector3 origem  = controller.transform.position + controller.transform.forward;
-
-            Vector3 direcao = Camera.main.transform.forward;
-            Ray ray = new Ray(origem, direcao);
+            mira.SetActive(true);
+            Vector3 origem = Quaternion.Euler(Camera.main.transform.eulerAngles) * Vector3.forward;
+            Ray ray = new Ray(Camera.main.transform.position, origem);
              Debug.DrawRay(ray.origin, ray.direction, Color.black);
-
-      
-
-          
 
             if (Input.GetButtonDown("Action"))
             {
                 if (GetLookedAtObject() != null)
                 {
+                
                     TeleportToLookAt();
                 }
             }
         }
        
 
+
     }
     private GameObject GetLookedAtObject()
     {
-        Vector3 origem = controller.transform.position + controller.transform.forward;
-      
-        Vector3 direcao = Camera.main.transform.forward;
+        
+        Vector3 origem = Quaternion.Euler(Camera.main.transform.eulerAngles) * Vector3.forward;
+        Ray ray = new Ray(Camera.main.transform.position, origem);
+        
 
-        if (Physics.Raycast (origem, direcao, out lastRaycastHit, range))
+        if (Physics.Raycast (ray, out lastRaycastHit, range))
         {
+          // Debug.Log(lastRaycastHit.collider.tag);
             return lastRaycastHit.collider.gameObject;
         }
         else
@@ -85,7 +85,8 @@ public class Teleporte : MonoBehaviour {
        
     }
 
-  
-
-
+    
 }
+
+
+

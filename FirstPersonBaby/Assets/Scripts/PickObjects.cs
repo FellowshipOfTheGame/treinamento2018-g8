@@ -60,7 +60,6 @@ public class PickObjects : MonoBehaviour {
     void pegarObjeto() {
 
         segurandoObj = true;
-        Debug.Log("segurando obj");
         objetoAPegar.GetComponent<Collider>().enabled = false;
         objetoAPegar.GetComponent<Renderer>().enabled = false;
         objetoAPegar.GetComponent<Rigidbody>().isKinematic = true;
