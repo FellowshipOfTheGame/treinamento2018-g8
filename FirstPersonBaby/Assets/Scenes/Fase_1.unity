@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5215d7c456a3d48b51db8cc8ddef4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpArea: {fileID: 0}
+  PickUpArea: {fileID: 2099096769}
   pc: {fileID: 0}
 --- !u!65 &151575536
 BoxCollider:
@@ -4527,7 +4527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5215d7c456a3d48b51db8cc8ddef4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpArea: {fileID: 0}
+  PickUpArea: {fileID: 2099096769}
   pc: {fileID: 0}
 --- !u!65 &766620016
 BoxCollider:
@@ -5667,7 +5667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5215d7c456a3d48b51db8cc8ddef4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpArea: {fileID: 0}
+  PickUpArea: {fileID: 2099096769}
   pc: {fileID: 0}
 --- !u!65 &1463888937
 BoxCollider:
@@ -6369,7 +6369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5215d7c456a3d48b51db8cc8ddef4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpArea: {fileID: 0}
+  PickUpArea: {fileID: 2099096769}
   pc: {fileID: 0}
 --- !u!65 &1586451015
 BoxCollider:
@@ -6907,6 +6907,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4051122851365932, guid: 5cf407c021429314caa7dd84877b44b1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5cf407c021429314caa7dd84877b44b1, type: 2}
   m_IsPrefabParent: 0
@@ -7168,7 +7172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da5215d7c456a3d48b51db8cc8ddef4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUpArea: {fileID: 0}
+  PickUpArea: {fileID: 2099096769}
   pc: {fileID: 0}
 --- !u!65 &2122595752
 BoxCollider:

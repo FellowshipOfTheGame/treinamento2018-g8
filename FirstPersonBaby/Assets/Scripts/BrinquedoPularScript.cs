@@ -112,7 +112,7 @@ public class BrinquedoPularScript : MonoBehaviour {
         // pegador = AreaPickUp.GetComponent<PickObjects>();
         pegador = GameObject.FindWithTag("AreaPickUp").GetComponent<PickObjects>();
         if (pegador == null) {
-            print("Player não encontrado");
+            print(GameObject.FindGameObjectWithTag("AreaPickUp").name);
         }
 
     }
