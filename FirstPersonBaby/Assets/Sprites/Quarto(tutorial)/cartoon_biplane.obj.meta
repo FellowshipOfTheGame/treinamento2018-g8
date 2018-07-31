@@ -1,16 +1,26 @@
 fileFormatVersion: 2
-guid: fe4697e4f3db88341981398a57853437
+guid: c82d1ddd5ed1bf04a9ec79f34c968e42
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: default
     400000: //RootNode
-    2100000: unnamed
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cloud_4
-    7400000: Default Take
-    9500000: //RootNode
+    400002: default
+    2100000: defaultMat
+    2100002: WheelCase
+    2100004: WingSupport
+    2100006: Wheel
+    2100008: PlaneGold
+    2100010: PlaneBody
+    2100012: WheelSupport
+    2100014: PropThingy
+    2100016: Wing
+    2300000: default
+    3300000: default
+    4300000: default
+    6400000: default
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -44,13 +54,13 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -86,7 +96,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

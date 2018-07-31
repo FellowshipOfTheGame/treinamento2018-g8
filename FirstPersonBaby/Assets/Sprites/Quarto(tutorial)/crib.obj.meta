@@ -1,16 +1,29 @@
 fileFormatVersion: 2
-guid: fe4697e4f3db88341981398a57853437
+guid: 0beae05481036af408f730df41b95fd1
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: default
     400000: //RootNode
-    2100000: unnamed
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cloud_4
-    7400000: Default Take
-    9500000: //RootNode
+    400002: default
+    2100000: wood_su.001
+    2100002: whitewood.003
+    2100004: whitewood.001
+    2100006: brownwood.001_littlebrown.jpg
+    2100008: sheetup.001
+    2100010: sheet_orange.001
+    2100012: sheet.001
+    2100014: metal_base_su.001
+    2100016: whitewood.002
+    2100018: whitemet.001
+    2100020: metal.001
+    2100022: plastic_base.001
+    2100024: metal.002
+    2300000: default
+    3300000: default
+    4300000: default
+    6400000: default
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -44,7 +57,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -86,7 +99,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

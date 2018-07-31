@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: fe4697e4f3db88341981398a57853437
+guid: 23e4bbd311eebe045833df1b72c3a8d3
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: default
     400000: //RootNode
-    2100000: unnamed
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cloud_4
-    7400000: Default Take
-    9500000: //RootNode
+    400002: default
+    2100000: defaultMat
+    2100002: Child_chair
+    2300000: default
+    3300000: default
+    4300000: default
+    6400000: default
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -44,7 +47,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -86,7 +89,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
