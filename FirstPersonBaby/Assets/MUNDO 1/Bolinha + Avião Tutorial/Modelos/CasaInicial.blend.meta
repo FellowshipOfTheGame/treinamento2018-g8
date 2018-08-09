@@ -1,29 +1,16 @@
 fileFormatVersion: 2
-guid: d7f6c15136735c2499d5097f14a53ced
+guid: a6cbcbd579c3e6f45b65c6aeddfcd8be
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Camera
-    100002: //RootNode
-    100004: Casa
-    100006: Lamp
-    100008: Camera.001
-    100010: Lamp.001
-    400000: Camera
-    400002: //RootNode
-    400004: Casa
-    400006: Lamp
-    400008: Camera.001
-    400010: Lamp.001
-    2000000: Camera
-    2000002: Camera.001
-    2100000: Casa
-    2300000: Casa
-    3300000: Casa
-    4300000: Casa
-    6400000: Casa
-    10800000: Lamp
-    10800002: Lamp.001
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Material_Casa__fgsdhdshdfhsdfgsdgsd
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cogumelo
+    7400000: Default Take
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -57,7 +44,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -99,7 +86,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
