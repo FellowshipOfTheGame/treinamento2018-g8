@@ -52,18 +52,12 @@ public class ControleRobo : MonoBehaviour {
 
     void transitarRobo() {
         if (usandoRobo) {
-            usandoRobo = false;
-            BrinquedoRobo.SetActive(false);
-            Player.SetActive(true);
+            //inicia a rotina de transição2
+            
 
-            //Setando Meshes
-            PlayerMesh.SetActive(false);
-            BrinquedoRoboMesh.transform.position = BrinquedoRobo.transform.position;
-            BrinquedoRoboMesh.transform.forward = BrinquedoRobo.GetComponentInChildren<Camera>().gameObject.transform.forward;
-            BrinquedoRoboMesh.SetActive(true);
-
-           
-
+            if (BrinquedoRobo.GetComponent<CharacterController>().isGrounded) {
+                StartCoroutine("trasintarAnimation2");
+            }                          
         }
         else {
             //inicia a rotina de transição
@@ -72,14 +66,70 @@ public class ControleRobo : MonoBehaviour {
     }
 
     
+    IEnumerator trasintarAnimation2() {
+        
+        usandoRobo = false;
+        transitionIsRunning = true;
+
+        //Desliga o colider para não bugar , será religado ao final da transição
+        BrinquedoRoboMesh.GetComponent<Collider>().enabled = false;
+
+        BrinquedoRoboMesh.transform.position = BrinquedoRobo.transform.position;
+        BrinquedoRoboMesh.transform.forward = BrinquedoRobo.GetComponentInChildren<Camera>().gameObject.transform.forward;
+        BrinquedoRoboMesh.SetActive(true);
+
+        //Logica de animação de transição 
+        GameObject CameraPlayer = BrinquedoRobo.GetComponentInChildren<Camera>().gameObject;
+
+        Vector3 PosInicialAretornar = CameraPlayer.transform.position;
+        Quaternion RotInicialAretornar = CameraPlayer.transform.rotation;
+
+        Vector3 posInicial = PosInicialAretornar;
+        Vector3 posFinal = Player.GetComponentInChildren<Camera>().gameObject.transform.position;
+        Quaternion rotInicial = RotInicialAretornar;
+        Quaternion rotFinal = Player.GetComponentInChildren<Camera>().gameObject.transform.rotation;
+
+        int x;
+        // Transição dura 2 segundos , roda 20 vezes de 0.05 segundo
+        for (x = 0; x < 120; x++) {
+            CameraPlayer.transform.position = Vector3.Lerp(posInicial, posFinal, velocidadeTransition * Time.deltaTime);
+            CameraPlayer.transform.rotation = Quaternion.Lerp(rotInicial, rotFinal, velocidadeTransition * Time.deltaTime);
+            posInicial = CameraPlayer.transform.position;
+            rotInicial = CameraPlayer.transform.rotation;
+
+            if (Vector3.Distance(posInicial, posFinal) < 0.05f) {
+                break;
+            }
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        //Faz as configurações necessarias
+        BrinquedoRobo.GetComponentInChildren<Camera>().gameObject.transform.position = PosInicialAretornar;
+        BrinquedoRobo.GetComponentInChildren<Camera>().gameObject.transform.rotation = RotInicialAretornar;
+
+
+        PlayerMesh.SetActive(false);
+        BrinquedoRobo.SetActive(false);
+        Player.SetActive(true);
+        //Volta a camera
+      
+        // Fim da coroutine
+        transitionIsRunning = false;
+
+        BrinquedoRoboMesh.GetComponent<Collider>().enabled = true;
+    }
+
 
     IEnumerator transitarAnimation() {
 
         usandoRobo = true;
         transitionIsRunning = true;
 
+        //Desliga o colider para não bugar , será religado ao final da transição
+        PlayerMesh.GetComponentInChildren<Collider>().enabled = false;
+
         //Ativar a mesh aparente;
-        PlayerMesh.transform.position = Player.transform.position + new Vector3(0.5f, -1.376f, 1.5f);
+        PlayerMesh.transform.position = Player.transform.position;
         PlayerMesh.transform.forward = Player.GetComponentInChildren<Camera>().gameObject.transform.forward;
         PlayerMesh.SetActive(true);
         
@@ -108,18 +158,18 @@ public class ControleRobo : MonoBehaviour {
             yield return new WaitForSeconds(0.01f);
         }
         
-        //Setando Meshes
-        Player.SetActive(false);
         //Volta a camera ao estado inicial
         Player.GetComponentInChildren<Camera>().gameObject.transform.position = PosInicialAretornar;
         Player.GetComponentInChildren<Camera>().gameObject.transform.rotation = RotInicialAretornar;
         // Faz o resto das configurações
-        BrinquedoRobo.SetActive(true);
+        Player.SetActive(false);
         BrinquedoRoboMesh.SetActive(false);
-     
+        BrinquedoRobo.SetActive(true);
+
+        PlayerMesh.GetComponentInChildren<Collider>().enabled = true;
+        //Fim da coroutine
         transitionIsRunning = false;
     }
-
 
 
 }
