@@ -41,6 +41,3 @@ public class Alvo : MonoBehaviour {
 
     }
 }
-
-
-    private void OnTriggerEnter(Collider other)
