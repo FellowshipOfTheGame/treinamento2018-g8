@@ -16,8 +16,8 @@ public class Alvo : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    private void OnTriggerEnter(Collider other)
+    
+    private void OnColisionEnter(Collider other)
     {
         if(((other.gameObject.tag == "BolinhaVermelha")&&(tipo_bolinha == 1)) || ((other.gameObject.tag == "BolinhaAzul") && (tipo_bolinha == 2))){ 
             int nbr = objects.Length;
