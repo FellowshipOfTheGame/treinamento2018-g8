@@ -6,16 +6,8 @@ public class Alvo : MonoBehaviour {
 
     public GameObject[] objects;
     public int tipo_bolinha; //1=vermelho 2=azul
+    public bool destroiAlvo = false; // true para destroir o alvo
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,7 +23,11 @@ public class Alvo : MonoBehaviour {
                     objects[i].SetActive(true);
                 }
             }
-            Destroy(this.gameObject);
+
+            if (destroiAlvo) {
+                Destroy(this.gameObject);
+            }
+
         }
 
     }

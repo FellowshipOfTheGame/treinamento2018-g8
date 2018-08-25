@@ -12,6 +12,7 @@ TagManager:
   - parede
   - chao
   - teste
+  - BolinhaVermelha
   layers:
   - Default
   - TransparentFX
