@@ -8,6 +8,15 @@ public class Alvo : MonoBehaviour {
     public int tipo_bolinha; //1=vermelho 2=azul
     public bool destroiAlvo = false; // true para destroir o alvo
 
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,3 +41,6 @@ public class Alvo : MonoBehaviour {
 
     }
 }
+
+
+    private void OnTriggerEnter(Collider other)
