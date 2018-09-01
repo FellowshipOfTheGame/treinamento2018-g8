@@ -764,7 +764,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011445454492, guid: 8155176e03f33f44884efb0dd767197c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -20.03
+      value: -19.33
       objectReference: {fileID: 0}
     - target: {fileID: 4000011445454492, guid: 8155176e03f33f44884efb0dd767197c, type: 2}
       propertyPath: m_LocalPosition.y
@@ -772,7 +772,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011445454492, guid: 8155176e03f33f44884efb0dd767197c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -27.9
+      value: -27.19
       objectReference: {fileID: 0}
     - target: {fileID: 4000011445454492, guid: 8155176e03f33f44884efb0dd767197c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5262,8 +5262,10 @@ MonoBehaviour:
   tempoDeDurar: 2
   velocidadeAparecer: 0.1
   falas:
-  - Estou com fome..... um Hamburguer seria bom!
+  - "Oh! my stomach is craving for nutrients! I have a dire need for my milk vassel.\r"
   - Bem vindo!
+  - "Harburguer \xE9 mt bom ......ummmmm......!!!"
+  - "Harburguer \xE9 mt bom ......ummmmm......!!!"
   - "Harburguer \xE9 mt bom ......ummmmm......!!!"
 --- !u!1 &1003131781 stripped
 GameObject:
@@ -5636,7 +5638,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1335805160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.941261, y: 2.4990375, z: -7.1436434}
+  m_LocalPosition: {x: -10.07, y: 7.1, z: -5.31}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7297,7 +7299,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4600430689635768, guid: 5cf407c021429314caa7dd84877b44b1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -24.91
+      value: -26.36
       objectReference: {fileID: 0}
     - target: {fileID: 4600430689635768, guid: 5cf407c021429314caa7dd84877b44b1, type: 2}
       propertyPath: m_LocalPosition.y
@@ -7305,7 +7307,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4600430689635768, guid: 5cf407c021429314caa7dd84877b44b1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -7.808
+      value: -8.23
       objectReference: {fileID: 0}
     - target: {fileID: 4600430689635768, guid: 5cf407c021429314caa7dd84877b44b1, type: 2}
       propertyPath: m_LocalRotation.x
@@ -7692,7 +7694,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2131696441}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.338, y: 5.09, z: -15.05}
+  m_LocalPosition: {x: -25.25, y: 5.09, z: -15.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1682829053}
@@ -7708,8 +7710,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4124928, y: 2.333274, z: 1.9277258}
-  m_Center: {x: 0.20624638, y: 0.66663694, z: 0.4638629}
+  m_Size: {x: 4.232933, y: 2.333274, z: 4.394163}
+  m_Center: {x: -0.4179592, y: 0.66663694, z: 1.6970816}
 --- !u!23 &2131696444
 MeshRenderer:
   m_ObjectHideFlags: 0
