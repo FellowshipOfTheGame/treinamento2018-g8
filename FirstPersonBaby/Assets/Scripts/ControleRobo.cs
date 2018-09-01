@@ -20,8 +20,12 @@ public class ControleRobo : MonoBehaviour {
 
     //Referencias a outros scripts 
     PickObjects pegador;
+    //Desligar o movimento na transição
+    private Movimento movimentoPlayer;
+    private Movimento movimentoRobo;
+    private CameraScript movimentoCameraPlayer;
+    private CameraScript movimentoCameraRobo;
 
-    
 
     void Start () {
 
@@ -29,12 +33,32 @@ public class ControleRobo : MonoBehaviour {
         if (pegador == null) {
             print("Player não encontrado");
         }
+
+        movimentoPlayer = Player.GetComponent<Movimento>();
+        movimentoRobo = BrinquedoRobo.GetComponent<Movimento>();
+
+        movimentoCameraPlayer = BrinquedoRobo.GetComponentInChildren<Camera>().gameObject.GetComponent<CameraScript>();
+        movimentoCameraRobo = Player.GetComponentInChildren<Camera>().gameObject.GetComponent<CameraScript>();
+
     }
 	
 	
 	void Update () {
 
         segurandoControleRemoto = false;
+        //Cancela o movimento durante a transição
+        if (transitionIsRunning) {
+            movimentoPlayer.enabled = false;
+            movimentoRobo.enabled = false;
+            movimentoCameraRobo.enabled = false;
+            movimentoCameraPlayer.enabled = false;
+        }
+        else {
+            movimentoPlayer.enabled = true;
+            movimentoRobo.enabled = true;
+            movimentoCameraRobo.enabled = true;
+            movimentoCameraPlayer.enabled = true;
+        }
 
         if (pegador.segurandoObj) {
             if (pegador.objetoAPegar == this.gameObject) {
@@ -52,9 +76,7 @@ public class ControleRobo : MonoBehaviour {
 
     void transitarRobo() {
         if (usandoRobo) {
-            //inicia a rotina de transição2
-            
-
+            //inicia a rotina de transição2         
             if (BrinquedoRobo.GetComponent<CharacterController>().isGrounded) {
                 StartCoroutine("trasintarAnimation2");
             }                          
