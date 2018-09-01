@@ -75,7 +75,7 @@ public class PickObjects : MonoBehaviour {
         objetoAPegar.GetComponent<Collider>().enabled = true;
         objetoAPegar.GetComponent<Renderer>().enabled = true;
 
-       objetoAPegar.transform.position = MainCamera.transform.position + 0.7f*MainCamera.forward;
+       objetoAPegar.transform.position = MainCamera.transform.position + 0.3f*MainCamera.forward;
     
          objetoAPegar.GetComponent<Rigidbody>().AddForce(MainCamera.forward * forca, ForceMode.Impulse);
        
