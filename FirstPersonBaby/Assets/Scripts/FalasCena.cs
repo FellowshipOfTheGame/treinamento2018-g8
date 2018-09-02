@@ -42,7 +42,7 @@ public class FalasCena : MonoBehaviour {
             StartCoroutine("displayText", posTexto);
             emissor.tocarSom(numeroDaFala);
             numeroDaFala++;
-            if(numeroDaFala >= emissor.sons.Length) {
+            if(numeroDaFala >= 3) {
                 numeroDaFala = 0;
             }
         }

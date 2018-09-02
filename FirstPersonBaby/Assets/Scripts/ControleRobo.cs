@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ControleRobo : MonoBehaviour {
 
+    //Referencias para o som
+    AudioManager emissor;
+
     //Varievais usadas na lógica local
     bool segurandoControleRemoto = false;
     bool usandoRobo = false;
@@ -39,6 +42,8 @@ public class ControleRobo : MonoBehaviour {
 
         movimentoCameraPlayer = BrinquedoRobo.GetComponentInChildren<Camera>().gameObject.GetComponent<CameraScript>();
         movimentoCameraRobo = Player.GetComponentInChildren<Camera>().gameObject.GetComponent<CameraScript>();
+
+        emissor = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<AudioManager>();
 
     }
 	
@@ -79,11 +84,13 @@ public class ControleRobo : MonoBehaviour {
             //inicia a rotina de transição2         
             if (BrinquedoRobo.GetComponent<CharacterController>().isGrounded) {
                 StartCoroutine("trasintarAnimation2");
+                emissor.tocarSom(0);
             }                          
         }
         else {
             //inicia a rotina de transição
             StartCoroutine("transitarAnimation");
+            emissor.tocarSom(0);
         }
     }
 

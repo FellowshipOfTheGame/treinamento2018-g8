@@ -9,6 +9,9 @@ public class BrinquedoPularScript : MonoBehaviour {
     CharacterController controlador;
     Movimento scritMovimento;
 
+    //Referencias para o som
+    AudioManager emissor;
+
     //Configuração do pulo
     public float alturaSalto = 10.0f;
     float gravidadePadrao;
@@ -29,6 +32,7 @@ public class BrinquedoPularScript : MonoBehaviour {
 	void Start () {
         atualizarDados();
         gravidadePadrao = scritMovimento.gravidadePadrao;
+        emissor = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<AudioManager>();
     }
 	
 	// Update is called once per frame
@@ -37,10 +41,9 @@ public class BrinquedoPularScript : MonoBehaviour {
         segurandoBrinquedoPular = false;
         atualizarDados();
 
-
         if (pegador.segurandoObj) {
             if (pegador.objetoAPegar == this.gameObject) {
-                segurandoBrinquedoPular = true;
+                segurandoBrinquedoPular = true;        
             }
         }
 
@@ -49,7 +52,6 @@ public class BrinquedoPularScript : MonoBehaviour {
             controlador.Move(new Vector3(0, controladorPulo(), 0));
         }else {
             scritMovimento.gravidadePadrao = gravidadePadrao;
-
         }
 
     }
@@ -88,7 +90,8 @@ public class BrinquedoPularScript : MonoBehaviour {
 
             if (Input.GetButtonDown("Action")) {
 
-                 velocidadeVertical = alturaSalto;
+                emissor.tocarSom(3);
+                velocidadeVertical = alturaSalto;
                 scritMovimento.gravidadePadrao = 0;
             }
 

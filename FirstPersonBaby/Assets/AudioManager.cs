@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour {
                 emissor.Stop();
             }
             emissor.clip = sons[num];
-            emissor.loop = false;
+            emissor.loop = false; 
             emissor.Play();
         }
     }
