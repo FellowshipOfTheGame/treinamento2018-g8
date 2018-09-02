@@ -21,8 +21,11 @@ public class PickObjects : MonoBehaviour {
 
     ArrayList objetosAlcance;
 
+    UI ui;
+
 
     void Start() {
+        ui = GameObject.Find("Canvas/BrinquedoPego").GetComponent<UI>();
         MainCamera = Camera.main.transform;
         objetosAlcance = new ArrayList();
     }
@@ -38,10 +41,12 @@ public class PickObjects : MonoBehaviour {
                     
                     DefinirObjetoApegar();
                     pegarObjeto();
+                    ui.Trocar_icone();
                 }
 
             }else {
                 jogarObjeto();
+                ui.Trocar_icone();
             }
         }
        
@@ -97,7 +102,7 @@ public class PickObjects : MonoBehaviour {
     void DefinirObjetoApegar() {
 
         GameObject maisPerto = null;
-        float menorDistancia = 1000.0f;// Gambiarra, arrumar depois
+        float menorDistancia = 1000.0f;// Gambiarra, arrumar depois (kkkkkkkkkkkk)
 
         foreach(GameObject x in objetosAlcance) {
             if(x != null) {
