@@ -14,6 +14,7 @@ TagManager:
   - teste
   - BolinhaVermelha
   - BolinhaAzul
+  - DialogueManager
   layers:
   - Default
   - TransparentFX

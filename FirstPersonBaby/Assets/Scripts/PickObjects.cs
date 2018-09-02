@@ -23,35 +23,25 @@ public class PickObjects : MonoBehaviour {
 
 
     void Start() {
-
         MainCamera = Camera.main.transform;
-
         objetosAlcance = new ArrayList();
-
     }
 
     // Update is called once per frame
     void Update() {
 
         if(Input.GetButtonDown("Fire1")) {
-
             if (!segurandoObj) {
 
                 DefinirSePodePegar();
-
-                if (podePegar) {
-               
+                if (podePegar) {   
+                    
                     DefinirObjetoApegar();
                     pegarObjeto();
-
                 }
 
             }else {
-           
-
                 jogarObjeto();
-
-
             }
         }
        
@@ -74,10 +64,9 @@ public class PickObjects : MonoBehaviour {
         objetoAPegar.GetComponent<Rigidbody>().isKinematic = false;
         objetoAPegar.GetComponent<Collider>().enabled = true;
         objetoAPegar.GetComponent<Renderer>().enabled = true;
-
-       objetoAPegar.transform.position = MainCamera.transform.position + 0.3f*MainCamera.forward;
-    
-         objetoAPegar.GetComponent<Rigidbody>().AddForce(MainCamera.forward * forca, ForceMode.Impulse);
+ 
+        objetoAPegar.transform.position = MainCamera.transform.position + 0.5f*MainCamera.forward;   
+        objetoAPegar.GetComponent<Rigidbody>().AddForce(MainCamera.forward * forca, ForceMode.Impulse);
        
     }
 
