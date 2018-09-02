@@ -12,11 +12,9 @@ public class MenuScript : MonoBehaviour {
     float time_spent = 0;
     float per_frame;
     bool getting_bigger = false;
-    Vector3 initial_size;
 
 	void Start () {
         o_button = GameObject.Find("Play Button");
-        initial_size = o_button.transform.localScale;
         Button start_button = GameObject.Find("Play Button").GetComponent<Button>();
         start_button.onClick.AddListener(startgame);
         per_frame = (1.0f - final_size) / time;
