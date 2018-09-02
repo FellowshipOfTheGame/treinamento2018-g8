@@ -21,17 +21,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: bico
-    second: {fileID: 2100006, guid: c4dd0a16815db114d86a518c7b341584, type: 3}
+    second: {fileID: 2100000, guid: 1169c6598329cdf499ec76a85758e378, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: glass
-    second: {fileID: 2100002, guid: c4dd0a16815db114d86a518c7b341584, type: 3}
+    second: {fileID: 2100000, guid: 87907826fb965ce4584f7228b934166e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: tampa
-    second: {fileID: 2100004, guid: c4dd0a16815db114d86a518c7b341584, type: 3}
+    second: {fileID: 2100000, guid: 786662d36fbc07e4eaeb066cc1ed2a32, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

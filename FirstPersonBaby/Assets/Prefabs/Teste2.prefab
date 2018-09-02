@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54751003071954696}
   - component: {fileID: 114569188193709760}
   m_Layer: 0
-  m_Name: Teste2
+  m_Name: BolinhaAzul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
