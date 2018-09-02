@@ -148,7 +148,7 @@ public class ControleRobo : MonoBehaviour {
         transitionIsRunning = true;
 
         //Desliga o colider para não bugar , será religado ao final da transição
-        PlayerMesh.GetComponentInChildren<Collider>().enabled = false;
+        //PlayerMesh.GetComponentInChildren<Collider>().enabled = false;
 
         //Ativar a mesh aparente;
         PlayerMesh.transform.position = Player.transform.position;
@@ -188,7 +188,7 @@ public class ControleRobo : MonoBehaviour {
         BrinquedoRoboMesh.SetActive(false);
         BrinquedoRobo.SetActive(true);
 
-        PlayerMesh.GetComponentInChildren<Collider>().enabled = true;
+        //PlayerMesh.GetComponentInChildren<Collider>().enabled = true;
         //Fim da coroutine
         transitionIsRunning = false;
     }
