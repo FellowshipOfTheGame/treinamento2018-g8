@@ -35,7 +35,7 @@ public class Alvo : MonoBehaviour {
             }
         }
     }
-
+    
     IEnumerator timerDelay() {
 
         podeEntrar = false;

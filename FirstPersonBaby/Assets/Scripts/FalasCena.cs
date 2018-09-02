@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class FalasCena : MonoBehaviour {
 
+    //Sounds
+    AudioManager emissor;
+    
     //Variaveis internas
-    private Text textoBalao;
+    private TextMeshProUGUI textoBalao;
     private bool isShowingText = false;    
 
     //Pega o balao como parametro
@@ -23,8 +27,9 @@ public class FalasCena : MonoBehaviour {
 
 	//Também vai checar para ver se entrou nas condições fala
     void Start () {
-        textoBalao = BalaoFalas.GetComponentInChildren<Text>();
+        textoBalao = BalaoFalas.GetComponentInChildren<TextMeshProUGUI>();
         BalaoFalas.SetActive(false);
+        emissor = this.GetComponent<AudioManager>();
 	}
 
     //Essa função que coloca o texto da posição escolhida na tela, chamada de outros scripts
@@ -34,6 +39,7 @@ public class FalasCena : MonoBehaviour {
                 StopCoroutine("displayText");
             }
             StartCoroutine("displayText", posTexto);
+            emissor.tocarSom(0);
         }
     }
 

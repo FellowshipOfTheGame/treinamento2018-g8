@@ -11,19 +11,19 @@ MonoBehaviour:
   m_Script: {fileID: -667331979, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
   m_Name: JazzCreateBubble
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1864370673
   material: {fileID: 21270839549950018}
-  materialHashCode: 0
+  materialHashCode: 688326234
   fontAssetType: 2
   m_fontInfo:
     Name: JazzCreateBubble
     PointSize: 108
-    Scale: 0
+    Scale: 1
     CharacterCount: 87
     LineHeight: 96
     Baseline: 0
     Ascender: 76
-    CapHeight: 0
+    CapHeight: 60
     Descender: -10
     CenterLine: 0
     SuperscriptOffset: 76
@@ -33,7 +33,7 @@ MonoBehaviour:
     UnderlineThickness: 5.4
     strikethrough: 24
     strikethroughThickness: 5.4
-    TabWidth: 0
+    TabWidth: 300
     Padding: 5
     AtlasWidth: 1024
     AtlasHeight: 1024
@@ -42,10 +42,10 @@ MonoBehaviour:
   - id: 32
     x: 5
     y: 1019
-    width: 0
-    height: 0
+    width: 30
+    height: 86
     xOffset: 0
-    yOffset: 0
+    yOffset: 76
     xAdvance: 30
     scale: 1
   - id: 33
