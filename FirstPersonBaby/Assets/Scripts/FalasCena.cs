@@ -23,6 +23,7 @@ public class FalasCena : MonoBehaviour {
     //Classe que será utilizada para armazenar as falar
     [TextArea(3,10)]
     public string[] falas;
+    int numeroDaFala = 0;
 
 
 	//Também vai checar para ver se entrou nas condições fala
@@ -39,7 +40,11 @@ public class FalasCena : MonoBehaviour {
                 StopCoroutine("displayText");
             }
             StartCoroutine("displayText", posTexto);
-            emissor.tocarSom(0);
+            emissor.tocarSom(numeroDaFala);
+            numeroDaFala++;
+            if(numeroDaFala >= emissor.sons.Length) {
+                numeroDaFala = 0;
+            }
         }
     }
 

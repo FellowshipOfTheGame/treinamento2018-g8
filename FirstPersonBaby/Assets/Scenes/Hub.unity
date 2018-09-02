@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17277, g: 0.21589471, b: 0.29782832, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276996, g: 0.21589486, b: 0.2978286, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6751,6 +6751,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114664926898511800, guid: 40cc9ddac9aeaca4195f3a2a83df89e7,
+        type: 2}
+      propertyPath: sons.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4817906156565726, guid: 40cc9ddac9aeaca4195f3a2a83df89e7, type: 2}
       propertyPath: m_LocalPosition.x
       value: -6.58
@@ -6788,6 +6793,16 @@ Prefab:
       propertyPath: BalaoFalas
       value: 
       objectReference: {fileID: 1468692061}
+    - target: {fileID: 114664926898511800, guid: 40cc9ddac9aeaca4195f3a2a83df89e7,
+        type: 2}
+      propertyPath: sons.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ce5ca54e0dd3ba498a256b42eae4f8b, type: 3}
+    - target: {fileID: 114664926898511800, guid: 40cc9ddac9aeaca4195f3a2a83df89e7,
+        type: 2}
+      propertyPath: sons.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f656035706ef9343a478a05bd0c1907, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40cc9ddac9aeaca4195f3a2a83df89e7, type: 2}
   m_IsPrefabParent: 0
