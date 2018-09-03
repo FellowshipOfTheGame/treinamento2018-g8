@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PickObjects : MonoBehaviour {
 
-    // Use this for initialization
-    
+    // Efeito Sonoro
+    AudioManager emissor;
+
 
     [HideInInspector]
     public bool segurandoObj = false;
@@ -25,9 +26,11 @@ public class PickObjects : MonoBehaviour {
 
 
     void Start() {
-        ui = GameObject.Find("Canvas/BrinquedoPego").GetComponent<UI>();
+      //  ui = GameObject.Find("Canvas/BrinquedoPego").GetComponent<UI>();
         MainCamera = Camera.main.transform;
         objetosAlcance = new ArrayList();
+        //Efeito sonoro
+        emissor = GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -41,12 +44,14 @@ public class PickObjects : MonoBehaviour {
                     
                     DefinirObjetoApegar();
                     pegarObjeto();
-                    ui.Trocar_icone();
+                   // ui.Trocar_icone();                                        
                 }
 
             }else {
                 jogarObjeto();
-                ui.Trocar_icone();
+                //Som de jogar objeto
+                emissor.tocarSom(7);
+                //ui.Trocar_icone();
             }
         }
        
