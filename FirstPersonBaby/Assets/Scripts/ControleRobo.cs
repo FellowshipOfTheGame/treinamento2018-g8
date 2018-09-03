@@ -90,7 +90,7 @@ public class ControleRobo : MonoBehaviour {
         else {
             //inicia a rotina de transição
             StartCoroutine("transitarAnimation");
-            emissor.tocarSom(0);
+            emissor.tocarSom(6);
         }
     }
 
