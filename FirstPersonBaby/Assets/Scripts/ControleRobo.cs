@@ -84,7 +84,7 @@ public class ControleRobo : MonoBehaviour {
             //inicia a rotina de transição2         
             if (BrinquedoRobo.GetComponent<CharacterController>().isGrounded) {
                 StartCoroutine("trasintarAnimation2");
-                emissor.tocarSom(0);
+                emissor.tocarSom(6);
             }                          
         }
         else {
