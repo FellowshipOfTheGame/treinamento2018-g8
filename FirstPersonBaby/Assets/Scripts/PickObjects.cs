@@ -25,7 +25,7 @@ public class PickObjects : MonoBehaviour {
 
 
     void Start() {
-        ui = GameObject.Find("Canvas/BrinquedoPego").GetComponent<UI>();
+       ui = GameObject.Find("Canvas/BrinquedoPego").GetComponent<UI>();
         MainCamera = Camera.main.transform;
         objetosAlcance = new ArrayList();
     }
@@ -41,7 +41,7 @@ public class PickObjects : MonoBehaviour {
                     
                     DefinirObjetoApegar();
                     pegarObjeto();
-                    ui.Trocar_icone();
+                   ui.Trocar_icone();
                 }
 
             }else {
