@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 
 public class Teletransporte : MonoBehaviour {
+
+    public Animator transition;
     
-   public string cena;
+    public string cena;
 
     void OnTriggerEnter(Collider brinquedo) {
 
         if (brinquedo.gameObject.tag == "Player") {
-            SceneManager.LoadScene(cena);
+            //SceneManager.LoadScene(cena);
+            transition.SetTrigger("FadeOut");
             return;
         }
         if(brinquedo.gameObject.tag == "AreaPickUp") {

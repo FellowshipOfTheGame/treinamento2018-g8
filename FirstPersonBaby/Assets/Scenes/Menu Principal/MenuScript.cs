@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour {
 
+    //animação para começar o jogo
+    public Animator transition;
+
     GameObject o_button;
     public float final_size;
     public float time;
@@ -47,8 +50,11 @@ public class MenuScript : MonoBehaviour {
 
     void startgame()
     {
-        SceneManager.LoadScene("Hub", LoadSceneMode.Single);
+        transition.SetTrigger("FadeOut");   
     }
+
+
+}
 
    public void QuitGame()
     {
