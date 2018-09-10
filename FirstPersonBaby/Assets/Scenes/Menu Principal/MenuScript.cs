@@ -53,9 +53,6 @@ public class MenuScript : MonoBehaviour {
         transition.SetTrigger("FadeOut");   
     }
 
-
-}
-
    public void QuitGame()
     {
         Debug.Log("Saiu");
