@@ -179,3 +179,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sons:
   - {fileID: 8300000, guid: 585f69a1ca000c045a10cf4307c9d521, type: 3}
+  - {fileID: 8300000, guid: 6ce5ca54e0dd3ba498a256b42eae4f8b, type: 3}
+  - {fileID: 8300000, guid: 8f656035706ef9343a478a05bd0c1907, type: 3}
+  - {fileID: 8300000, guid: 0d113f51ef370db4b974b5dc7fe25390, type: 3}
+  - {fileID: 8300000, guid: 10c3dd5ffedc47742a6b90225190a05e, type: 3}
+  - {fileID: 8300000, guid: 494b5c79981e9c1468eaa0542225ae7f, type: 3}
+  - {fileID: 8300000, guid: 8d314df492237e048b5902cd7a073660, type: 3}
+  - {fileID: 8300000, guid: 9cf812d3e16ccad4884b7cfda9153262, type: 3}

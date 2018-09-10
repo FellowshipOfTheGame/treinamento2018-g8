@@ -16,7 +16,9 @@ public class MenuScript : MonoBehaviour {
 	void Start () {
         o_button = GameObject.Find("Play Button");
         Button start_button = GameObject.Find("Play Button").GetComponent<Button>();
+        Button quit_button = GameObject.Find("Quit Button").GetComponent<Button>();
         start_button.onClick.AddListener(startgame);
+        quit_button.onClick.AddListener(QuitGame);
         per_frame = (1.0f - final_size) / time;
 	}
 
@@ -47,4 +49,10 @@ public class MenuScript : MonoBehaviour {
     {
         SceneManager.LoadScene("Hub", LoadSceneMode.Single);
     }
-}
+
+   public void QuitGame()
+    {
+        Debug.Log("Saiu");
+        Application.Quit();
+    }
+}   
