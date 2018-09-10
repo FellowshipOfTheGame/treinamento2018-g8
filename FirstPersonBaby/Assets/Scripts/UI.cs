@@ -22,6 +22,7 @@ public class UI : MonoBehaviour {
 	
     public void Trocar_icone()
     {
+        print("ata");
         imagem_brinquedo.preserveAspect = true;
         if(pickobjects.segurandoObj)
         {
