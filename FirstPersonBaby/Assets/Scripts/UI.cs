@@ -22,6 +22,7 @@ public class UI : MonoBehaviour {
 	
     public void Trocar_icone()
     {
+        print("ata");
         imagem_brinquedo.preserveAspect = true;
         if(pickobjects.segurandoObj)
         {
@@ -37,7 +38,7 @@ public class UI : MonoBehaviour {
                 imagem_brinquedo.sprite = aviao;
             }else if(pickobjects.objetoAPegar.tag == "Controle")
             {
-
+                imagem_brinquedo.sprite = controle;
             }else
             {
                 imagem_brinquedo.gameObject.SetActive(false);

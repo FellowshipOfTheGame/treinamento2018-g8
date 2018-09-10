@@ -26,7 +26,7 @@ public class PickObjects : MonoBehaviour {
 
 
     void Start() {
-      //  ui = GameObject.Find("Canvas/BrinquedoPego").GetComponent<UI>();
+        ui = GameObject.Find("Canvas").transform.Find("BrinquedoPego").GetComponent<UI>();
         MainCamera = Camera.main.transform;
         objetosAlcance = new ArrayList();
         //Efeito sonoro
@@ -44,14 +44,14 @@ public class PickObjects : MonoBehaviour {
                     
                     DefinirObjetoApegar();
                     pegarObjeto();
-                   // ui.Trocar_icone();                                        
+                    ui.Trocar_icone();                                        
                 }
 
             }else {
                 jogarObjeto();
                 //Som de jogar objeto
                 emissor.tocarSom(7);
-                //ui.Trocar_icone();
+                ui.Trocar_icone();
             }
         }
        
