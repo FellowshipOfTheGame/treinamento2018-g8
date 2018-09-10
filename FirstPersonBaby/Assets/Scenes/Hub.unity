@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276996, g: 0.21589486, b: 0.2978286, a: 1}
+  m_IndirectSpecularColor: {r: 0.17277, g: 0.21589471, b: 0.29782832, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6692,7 +6692,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 5
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -6720,7 +6720,7 @@ MonoBehaviour:
     spaceCount: 1
     wordCount: 2
     linkCount: 0
-    lineCount: 7
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -6972,6 +6972,7 @@ GameObject:
   - component: {fileID: 1791851783}
   - component: {fileID: 1791851782}
   - component: {fileID: 1791851784}
+  - component: {fileID: 1791851785}
   m_Layer: 5
   m_Name: BrinquedoPego
   m_TagString: Untagged
@@ -6994,8 +6995,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -32.4, y: -34.2}
-  m_SizeDelta: {x: 65.8, y: 68.4}
+  m_AnchoredPosition: {x: -62, y: -42}
+  m_SizeDelta: {x: 120, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1791851782
 MonoBehaviour:
@@ -7041,6 +7042,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28875cd9e8f15c749811d1247b5dc6a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1791851785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1791851780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1254083943, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 0
+  m_AspectRatio: 1.5
 --- !u!1 &1868341315 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 4e5d87e91283433419747545dffced7f, type: 3}
@@ -7474,6 +7488,10 @@ Prefab:
     - target: {fileID: 1893061028581208, guid: 70938d48824b77a4d9587569f3155e4c, type: 2}
       propertyPath: m_Name
       value: BrinquedoPulo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893061028581208, guid: 70938d48824b77a4d9587569f3155e4c, type: 2}
+      propertyPath: m_TagString
+      value: Aviao
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70938d48824b77a4d9587569f3155e4c, type: 2}
