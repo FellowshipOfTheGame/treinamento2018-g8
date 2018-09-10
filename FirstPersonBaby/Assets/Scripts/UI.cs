@@ -14,7 +14,7 @@ public class UI : MonoBehaviour {
         imagem_brinquedo = GameObject.Find("BrinquedoPego").GetComponent<Image>();
         imagem_brinquedo.gameObject.SetActive(false);
         controle = Resources.Load<Sprite>("controle");
-        bolinhaazul = Resources.Load<Sprite>("Sprites/bolinhaazul");
+        bolinhaazul = Resources.Load<Sprite>("bolinhaazul");
         bolinhavermelha = Resources.Load<Sprite>("bolinhavermelha");
         aviao = Resources.Load<Sprite>("aviao");
         pickobjects = GameObject.Find("PickUpArea").GetComponent<PickObjects>();
@@ -22,15 +22,22 @@ public class UI : MonoBehaviour {
 	
     public void Trocar_icone()
     {
+        imagem_brinquedo.preserveAspect = true;
         if(pickobjects.segurandoObj)
         {
             imagem_brinquedo.gameObject.SetActive(true);
-            if(pickobjects.objetoAPegar.tag == "BolinhaVermelha")
+            if (pickobjects.objetoAPegar.tag == "BolinhaVermelha")
             {
                 imagem_brinquedo.sprite = bolinhavermelha;
-            }else if(pickobjects.objetoAPegar.tag == "BolinhaAzul")
+            } else if (pickobjects.objetoAPegar.tag == "BolinhaAzul")
             {
                 imagem_brinquedo.sprite = bolinhaazul;
+            } else if (pickobjects.objetoAPegar.tag == "Aviao")
+            {
+                imagem_brinquedo.sprite = aviao;
+            }else if(pickobjects.objetoAPegar.tag == "Controle")
+            {
+
             }else
             {
                 imagem_brinquedo.gameObject.SetActive(false);

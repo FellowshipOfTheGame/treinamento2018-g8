@@ -11,6 +11,7 @@ public class BrinquedoPularScript : MonoBehaviour {
 
     //Referencias para o som
     AudioManager emissor;
+    int somAtocar = 3;
 
     //Configuração do pulo
     public float alturaSalto = 10.0f;
@@ -88,9 +89,12 @@ public class BrinquedoPularScript : MonoBehaviour {
             }
             
 
-            if (Input.GetButtonDown("Action")) {
-
-                emissor.tocarSom(3);
+            if (Input.GetButtonDown("Action")) {            
+                emissor.tocarSom(somAtocar);
+                somAtocar++;
+                if(somAtocar >= 6) {
+                    somAtocar = 3;
+                }
                 velocidadeVertical = alturaSalto;
                 scritMovimento.gravidadePadrao = 0;
             }
