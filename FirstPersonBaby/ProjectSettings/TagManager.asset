@@ -16,6 +16,7 @@ TagManager:
   - BolinhaAzul
   - DialogueManager
   - Aviao
+  - Controle
   layers:
   - Default
   - TransparentFX

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19235794, g: 0.59281975, b: 0.77697575, a: 1}
+  m_IndirectSpecularColor: {r: 0.19236103, g: 0.5932258, b: 0.7735064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25368,7 +25368,7 @@ Prefab:
         type: 2}
       propertyPath: robo
       value: 
-      objectReference: {fileID: 1892175861}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e19087a24f0f83478718bf83b803dbf, type: 2}
   m_IsPrefabParent: 0
@@ -36991,7 +36991,7 @@ Prefab:
         type: 2}
       propertyPath: BrinquedoRobo
       value: 
-      objectReference: {fileID: 1892175861}
+      objectReference: {fileID: 0}
     - target: {fileID: 114356429864244508, guid: 9d9c0912b6cd96f499e11fc5a32a9c3a,
         type: 2}
       propertyPath: Player
@@ -37011,6 +37011,10 @@ Prefab:
         type: 2}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1529333841977034, guid: 9d9c0912b6cd96f499e11fc5a32a9c3a, type: 2}
+      propertyPath: m_TagString
+      value: Controle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d9c0912b6cd96f499e11fc5a32a9c3a, type: 2}
@@ -45984,11 +45988,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 000d73b6e8b89634b8cfbb90ba1f86e3, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1892175861 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1131193885794302, guid: 000d73b6e8b89634b8cfbb90ba1f86e3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1892175860}
 --- !u!1001 &1892194939
 Prefab:
   m_ObjectHideFlags: 0
