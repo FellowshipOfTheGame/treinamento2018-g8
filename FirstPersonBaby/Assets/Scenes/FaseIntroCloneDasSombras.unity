@@ -44298,6 +44298,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7924f888e372de04781631cd59f5bf8e, type: 2}
   m_IsPrefabParent: 0
+--- !u!95 &1819189781 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95648621532413922, guid: 7924f888e372de04781631cd59f5bf8e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1819189780}
 --- !u!4 &1822403833 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4eb37a4328780694f8e410ba18c191f2, type: 2}
@@ -44762,6 +44767,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -153.11401
       objectReference: {fileID: 0}
+    - target: {fileID: 114521066428887208, guid: cefd4aab2f8ee6e4fbe3289125bec461,
+        type: 2}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 1819189781}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cefd4aab2f8ee6e4fbe3289125bec461, type: 2}
   m_IsPrefabParent: 0
