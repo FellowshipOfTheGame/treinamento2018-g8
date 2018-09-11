@@ -11,7 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hub.unity
     guid: 2fda26f4115057e41a95cff816a2b924
-  - enabled: 0
+  - enabled: 1
     path: "Assets/MUNDO 1/Bolinha + Avi\xE3o Tutorial/Fase1.unity"
     guid: d9a94e127a7df874fb016f7c9df5a443
+  - enabled: 1
+    path: Assets/MUNDO 1/Pulo+Bolinha.unity
+    guid: 91a54abe35f7b3443817e46e7255755e
+  - enabled: 1
+    path: Assets/Scenes/FaseIntroCloneDasSombras.unity
+    guid: 2741842673b07c44c9ac5bee81d6a054
+  - enabled: 1
+    path: Assets/Scenes/bola_clone_pulo2.unity
+    guid: 68b4204d81591864a896240bdac521d2
+  - enabled: 1
+    path: Assets/Scenes/creditos.unity
+    guid: 15915fcb7a858684ab88e1b77249c3e3
   m_configObjects: {}
