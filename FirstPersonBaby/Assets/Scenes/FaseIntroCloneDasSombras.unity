@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19235794, g: 0.59281975, b: 0.77697575, a: 1}
+  m_IndirectSpecularColor: {r: 0.19236103, g: 0.5932258, b: 0.7735064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12780,6 +12780,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a87357b9f23222a499d2504aac0e5cc0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &589593246 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1131193885794302, guid: 000d73b6e8b89634b8cfbb90ba1f86e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1892175860}
 --- !u!4 &590456029 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: d1954f0a115b2ba4aa93cf95e2fd8348, type: 2}
@@ -36996,7 +37001,7 @@ Prefab:
         type: 2}
       propertyPath: BrinquedoRobo
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 589593246}
     - target: {fileID: 114356429864244508, guid: 9d9c0912b6cd96f499e11fc5a32a9c3a,
         type: 2}
       propertyPath: Player
