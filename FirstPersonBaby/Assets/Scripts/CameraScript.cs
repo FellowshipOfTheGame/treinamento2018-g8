@@ -48,7 +48,7 @@ public class CameraScript : MonoBehaviour
 
 
        Cursor.lockState = CursorLockMode.Locked;
-     
+        Cursor.visible = false;
        // controller = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
 
         
@@ -60,17 +60,7 @@ public class CameraScript : MonoBehaviour
 
     void Update()
     {
-       /* if(cursorIsLocked)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        */
+       
         if (axes == RotationAxes.MouseXAndY)
         {
 
