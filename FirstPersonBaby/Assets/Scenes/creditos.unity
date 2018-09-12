@@ -253,9 +253,8 @@ Prefab:
     - target: {fileID: 114470393271813692, guid: 40cc9ddac9aeaca4195f3a2a83df89e7,
         type: 2}
       propertyPath: falas.Array.data[0]
-      value: "CR\xC9DITOS:\n\nCAMO\nGYY\nTHIAGO\nFLOAT\n\nARTE DA INTERNET \n\nMUSICA
-        DA INTERNET\n\nMAIS CREDITOS\n\nCOISAS LEGAIS\n\nMais Coisas LEgais\n\nObrigado
-        por jogar"
+      value: "\nCR\xC9DITOS:\n\nGyovana \nCamolezi\nThiago\nFloat\n\nMUSICAS:\nhttps://www.bensound.com/\n\n\nObrigado
+        por jogar!\n\n\n\nDesculpas"
       objectReference: {fileID: 0}
     - target: {fileID: 114470393271813692, guid: 40cc9ddac9aeaca4195f3a2a83df89e7,
         type: 2}
@@ -631,7 +630,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1a6c6f6f32e0cf94a8447c57ba887b81, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.871
   m_Pitch: 1
   Loop: 0
   Mute: 0
